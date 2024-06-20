@@ -25,7 +25,7 @@ exports.deleteRole = async (req, res) => {
   const { id } = req.params;
   try {
     await roleService.deleteRoleById(id);
-    res.status(204).send();
+    res.status(200).json({ message: 'Role deleted successfully' });
   } catch (err) {
     res.status(404).json({ error: err.message });
   }
