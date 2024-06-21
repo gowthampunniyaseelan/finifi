@@ -21,6 +21,12 @@ const accessLevelMiddleware = (allowedRoles) => async (req, res, next) => {
                   res.status(401).json({ message: 'Not authorized, Access denied' });
                 }
             }
+            else{
+              res.status(401).json({ message: 'Not authorized, Access denied' });
+            }
+          }
+          else{
+            res.status(401).json({ message: 'Not authorized, Access denied' });
           }
       } catch (error) {
           res.status(401).json({ message: 'Not authorized, token failed' });
